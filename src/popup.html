@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Review Collector</title>
+  <link rel="stylesheet" href="./popup.css" />
+</head>
+
+<main class="shell">
+  <header class="header">
+    <div>
+      <h1>Research Review Collector</h1>
+      <p class="subhead">Capture page details and save your own assessment.</p>
+    </div>
+    <span id="statusBadge" class="badge">Loading</span>
+  </header>
+
+  <section class="card">
+    <div class="card-header">
+      <h2>Account</h2>
+      <button id="openRecordsButton" class="ghost-button" type="button">View saved records</button>
+    </div>
+
+    <label class="label" for="username">Username</label>
+    <input id="username" class="input" type="text" placeholder="Enter a username" />
+
+    <div class="button-row auth-buttons">
+      <button id="saveUsernameButton" class="primary-button" type="button">Save username</button>
+    </div>
+
+    <p class="signed-in-copy">
+      Username: <strong id="userEmail">—</strong>
+    </p>
+
+    <div class="button-row">
+      <button id="signOutButton" class="secondary-button" type="button">
+        Sign out
+      </button>
+    </div>
+
+    <p id="message" class="message" role="status"></p>
+  </section>
+
+  <section class="card">
+    <div class="card-header">
+      <h2>Current page</h2>
+      <button id="refreshButton" class="ghost-button" type="button">Refresh</button>
+    </div>
+
+    <dl class="meta-grid">
+      <div class="full-width">
+        <dt>Page title</dt>
+        <dd id="metaTitle">—</dd>
+      </div>
+    </dl>
+  </section>
+
+  <section class="card">
+    <h2>Your assessment</h2>
+
+    <label class="label" for="comment">Comment</label>
+    <textarea id="comment" class="textarea" rows="4" placeholder="Add a short note"></textarea>
+
+    <fieldset class="replicable-group">
+      <legend>Were you able to replicate the experimental work?</legend>
+      <label><input type="radio" name="replicable" value="yes" /> Yes</label>
+      <label><input type="radio" name="replicable" value="no" /> No</label>
+      <label><input type="radio" name="replicable" value="unclear" /> Unclear</label>
+      <label><input type="radio" name="replicable" value="" checked /> Not answered</label>
+    </fieldset>
+
+    <div class="button-row">
+      <button id="saveButton" class="primary-button" type="button">Save</button>
+    </div>
+  </section>
+</main>
+
+<script type="module" src="./popup.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saved records</title>
+    <link rel="stylesheet" href="./records.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="page-header">
+        <div>
+          <h1>Saved records</h1>
+          <p id="summary">Loading…</p>
+        </div>
+        <div class="header-actions">
+          <input id="searchInput" type="search" placeholder="Search records" />
+          <button id="refreshButton" type="button">Refresh</button>
+          <button id="exportButton" type="button">Export JSON</button>
+        </div>
+      </header>
+
+      <section id="signedOutNotice" class="notice hidden">
+        <p>You are not logged in. Open the extension popup and sign in first.</p>
+      </section>
+
+      <section id="records" class="records-list"></section>
+    </main>
+
+    <template id="recordTemplate">
+      <article class="record-card">
+        <div class="record-top-row">
+          <div>
+            <h2 class="record-title"></h2>
+            <p class="record-url"></p>
+          </div>
+          <button class="delete-button" type="button">Delete</button>
+        </div>
+        <dl class="record-grid">
+          <div><dt>Author</dt><dd class="record-author"></dd></div>
+          <div><dt>Publication date</dt><dd class="record-date"></dd></div>
+          <div><dt>Replicable</dt><dd class="record-replicable"></dd></div>
+          <div><dt>Updated</dt><dd class="record-updated"></dd></div>
+          <div class="full-width"><dt>Headings</dt><dd class="record-headings"></dd></div>
+          <div class="full-width"><dt>Comment</dt><dd class="record-comment"></dd></div>
+        </dl>
+      </article>
+    </template>
+
+    <script type="module" src="./records.js"></script>
+  </body>
+</html>
